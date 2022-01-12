@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import slugify from "slugify"
-import setupTags from "../utils/setupTags"
+import { setupTags } from "../lib/tags"
 
 const TagsList = ({ recipes }) => {
   const newTags = setupTags(recipes)

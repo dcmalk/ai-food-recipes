@@ -1,4 +1,4 @@
-const setupTags = recipes => {
+export const setupTags = recipes => {
   const allTags = {}
   recipes.forEach(recipe => {
     recipe.content.tags.forEach(tags => {
@@ -16,5 +16,3 @@ const setupTags = recipes => {
   })
   return newTags
 }
-
-export default setupTags

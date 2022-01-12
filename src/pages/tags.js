@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import slugify from "slugify"
 import Layout from "../components/Layout"
-import setupTags from "../utils/setupTags"
+import { setupTags } from "../lib/tags"
 import SEO from "../components/SEO"
 
 const Tags = ({ data }) => {

@@ -1,0 +1,5 @@
+{
+  "rules": {
+    "react/jsx-pascal-case": "allowAllCaps" // disable warning triggered by SEO component name
+  }
+}

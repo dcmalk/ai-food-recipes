@@ -16,9 +16,26 @@ $ npm start
 Create a `.env.development` and a `.env.production` file with the constants below. Add the required credentials to each file:
 
 ```
-CONTENTFUL_API_KEY=your-contentful-api-key
+CONTENTFUL_AUTH_TOKEN=your-contentful-account-auth-token
+CONTENTFUL_API_KEY=your-contentful-space-api-key
 CONTENTFUL_SPACE_ID=your-contentful-space-id
 HUGGING_FACE_API_KEY=your-hugging-face-api-key
+PIXABAY_API_KEY=your-pixabay-api-key
+```
+
+## Contentful Model
+
+Add a content type called `recipe` with the following fields:
+
+```
+title: Short text
+cookTime: Integer
+description: Long text
+servings: Integer
+image: Media
+featured: Boolean
+prepTime: Integer
+content: JSON object
 ```
 
 ## Built Using
@@ -27,8 +44,8 @@ HUGGING_FACE_API_KEY=your-hugging-face-api-key
 - [GraphQL](https://graphql.org/)
 - [Contentful](https://www.contentful.com/)
 - [Hugging Face](https://huggingface.co/)
-- [Styled Components](https://styled-components.com/)
+- [Pixabay](https://pixabay.com/)
 
 ## Acknowledgements
 
-Special thanks to John Smilga for creating his excellent Udemy course, [Gatsby.js Tutorial and Projects Course](https://www.udemy.com/course/gatsby-tutorial-and-projects-course/), from which this code originated. This repository contains my updated version of the project which extends its functionality using AI generated recipes.
+Special thanks to John Smilga for creating his excellent Udemy course, [Gatsby.js Tutorial and Projects Course](https://www.udemy.com/course/gatsby-tutorial-and-projects-course/), from which this code originated. This repository contains my updated version of the project which extends its functionality using AI generated recipes and automatic image selection from Pixabay.

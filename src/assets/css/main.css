@@ -204,8 +204,8 @@ button,
   transition: var(--transition);
   text-transform: capitalize;
 }
-button:hover,
-.btn:hover {
+button:hover:enabled,
+.btn:hover:enabled {
   color: var(--white);
   background: var(--primary-700);
   box-shadow: var(--shadow-2);
@@ -225,6 +225,11 @@ button.hipster:hover {
 }
 button.block {
   width: 100%;
+}
+button:disabled,
+button[disabled] {
+  background-color: #cccccc;
+  color: #666666;
 }
 
 /* Basic Classes */
@@ -653,6 +658,7 @@ form > *:last-child {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 /*#########*/
 /* Tags */
 /*#########*/
@@ -786,4 +792,61 @@ form > *:last-child {
   padding-bottom: 0.75rem;
   color: var(--primary-500);
   text-transform: capitalize;
+}
+
+/*#########*/
+/* Add Page */
+/*#########*/
+.add-info {
+  margin-bottom: 40px;
+}
+.add-form {
+  margin-bottom: 20px;
+}
+
+/*#########*/
+/* Tiles */
+/*#########*/
+.tile-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+.tile {
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+.tile input[type="checkbox"] {
+  -webkit-appearance: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  outline: none;
+  box-shadow: var(--shadow-4);
+}
+.tile input[type="checkbox"]:hover {
+  transform: scale(1.1);
+}
+.tile input[type="checkbox"]:checked {
+  border: 3px solid var(--primary-500);
+}
+.tile label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
 }

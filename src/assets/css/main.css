@@ -772,6 +772,9 @@ form > *:last-child {
   color: var(--primary-500);
   margin-bottom: 0;
 }
+.single-instruction p:last-child::first-letter {
+  text-transform: capitalize;
+}
 
 .single-instruction header div {
   height: 1px;

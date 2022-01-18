@@ -8,7 +8,7 @@ export const parseAI = result => {
   const ingredientsArray = ingredients.match(/([0-9]+)\s[A-Za-z]+[^0-9]+/g)
   const instructionsArray = instructions
     .split(".")
-    .map(item => item.trim())
+    .map(item => item.trim() + ".")
     .filter(item => item)
 
   return {

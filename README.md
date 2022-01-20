@@ -43,6 +43,7 @@ content: JSON object
 - [Gatsby](https://www.gatsbyjs.com/)
 - [GraphQL](https://graphql.org/)
 - [Contentful](https://www.contentful.com/)
+- [Netlify Functions](https://www.netlify.com/products/functions/)
 - [Hugging Face](https://huggingface.co/)
 - [Pixabay](https://pixabay.com/)
 

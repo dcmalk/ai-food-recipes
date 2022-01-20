@@ -4,58 +4,45 @@ import AddRecipe from "../components/AddRecipe"
 import SEO from "../components/SEO"
 import { parseAI } from "../lib/parser"
 import { addContentfulRecipe } from "../lib/contentful"
+import { getHuggingFaceRecipe } from "../lib/huggingface"
 
 const Add = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
   const addRecipeHandler = async recipe => {
-    const inputs = recipe.foods.join(", ")
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.HUGGING_FACE_API_KEY}`,
-      },
-      body: JSON.stringify({
-        inputs: inputs,
-      }),
-    }
-
     setError(null)
     setIsLoading(true)
 
     try {
-      // Generate a recipe
-      const res = await fetch(
-        `https://api-inference.huggingface.co/models/flax-community/t5-recipe-generation`,
-        options
-      )
-      if (!res.ok) {
-        if (res.status == 503) {
-          setError(
-            "The AI model is now loading. Please try generating again in about 60 seconds..."
-          )
-          return
-        } else {
-          throw new Error(res.statusText)
-        }
+      const hfRecipe = await getHuggingFaceRecipe(recipe.foods)
+      if (!hfRecipe.success) {
+        setError(hfRecipe.error.message)
+        setIsLoading(false)
+        return
       }
-      const json = await res.json()
 
-      // Parse and add the response
-      if (json) {
-        const parsed = parseAI(json[0].generated_text)
+      const generated = hfRecipe.data[0].generated_text
+      if (generated) {
+        const parsed = parseAI(generated)
         const recipeData = {
           ...recipe,
           ...parsed,
         }
+
         const newRecipe = await addContentfulRecipe(recipeData)
-        console.log("newRecipe", newRecipe)
+        if (!newRecipe.success) {
+          setError(newRecipe.error.message)
+          setIsLoading(false)
+          return
+        }
+        console.log("title=", newRecipe.data.fields.title)
         // redirect to new recipe
+      } else {
+        throw new Error("Error: Could not generate recipe")
       }
-    } catch (err) {
-      setError("Error: Could not fetch data")
+    } catch (error) {
+      setError(error.message)
     }
 
     setIsLoading(false)

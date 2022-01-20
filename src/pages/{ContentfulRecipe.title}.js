@@ -54,14 +54,15 @@ const RecipeTemplate = ({ data }) => {
               {/* tags */}
               <p className="recipe-tags">
                 Tags :
-                {tags.map((tag, index) => {
-                  const slug = slugify(tag, { lower: true })
-                  return (
-                    <Link key={index} to={`/tags/${slug}`}>
-                      {tag}
-                    </Link>
-                  )
-                })}
+                {tags &&
+                  tags.map((tag, index) => {
+                    const slug = slugify(tag, { lower: true })
+                    return (
+                      <Link key={index} to={`/tags/${slug}`}>
+                        {tag}
+                      </Link>
+                    )
+                  })}
               </p>
             </article>
           </section>
@@ -69,38 +70,41 @@ const RecipeTemplate = ({ data }) => {
           <section className="recipe-content">
             <article>
               <h4>Instructions</h4>
-              {instructions.map((item, index) => {
-                return (
-                  <div key={index} className="single-instruction">
-                    <header>
-                      <p>step {index + 1}</p>
-                      <div></div>
-                    </header>
-                    <p>{item}</p>
-                  </div>
-                )
-              })}
+              {instructions &&
+                instructions.map((item, index) => {
+                  return (
+                    <div key={index} className="single-instruction">
+                      <header>
+                        <p>step {index + 1}</p>
+                        <div></div>
+                      </header>
+                      <p>{item}</p>
+                    </div>
+                  )
+                })}
             </article>
             <article className="second-column">
               <div>
                 <h4>Ingredients</h4>
-                {ingredients.map((item, index) => {
-                  return (
-                    <p key={index} className="single-ingredient">
-                      {item}
-                    </p>
-                  )
-                })}
+                {ingredients &&
+                  ingredients.map((item, index) => {
+                    return (
+                      <p key={index} className="single-ingredient">
+                        {item}
+                      </p>
+                    )
+                  })}
               </div>
               <div>
                 <h4>Tools</h4>
-                {tools.map((item, index) => {
-                  return (
-                    <p key={index} className="single-tool">
-                      {item}
-                    </p>
-                  )
-                })}
+                {tools &&
+                  tools.map((item, index) => {
+                    return (
+                      <p key={index} className="single-tool">
+                        {item}
+                      </p>
+                    )
+                  })}
               </div>
             </article>
           </section>

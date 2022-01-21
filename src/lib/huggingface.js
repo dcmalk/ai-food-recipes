@@ -7,7 +7,7 @@ export const getHuggingFaceRecipe = async inputs => {
     body: JSON.stringify({ inputs }),
   }
   try {
-    const response = await fetch("/api/huggingface", options)
+    const response = await fetch("/.netlify/functions/huggingface", options)
     if (!response.ok) {
       if (response.status == 503) {
         throw new Error(

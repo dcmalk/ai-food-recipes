@@ -7,7 +7,7 @@ export const addContentfulRecipe = async recipe => {
     body: JSON.stringify({ recipe }),
   }
   try {
-    const response = await fetch("/api/contentful", options)
+    const response = await fetch("/.netlify/functions/contentful", options)
     if (!response.ok) {
       throw new Error(`${response.status} ${response.statusText}`)
     }

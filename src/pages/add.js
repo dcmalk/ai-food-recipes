@@ -24,7 +24,7 @@ const Add = () => {
 
       const generated = hfRecipe.data[0].generated_text
       if (generated) {
-        const parsed = parseAI(generated)
+        const parsed = parseAI(generated, recipe.foods)
         const recipeData = {
           ...recipe,
           ...parsed,

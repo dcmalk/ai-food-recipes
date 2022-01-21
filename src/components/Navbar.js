@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import { FiAlignJustify } from "react-icons/fi"
-import logo from "../assets/images/logo.svg"
+import logo from "../assets/images/logo.png"
 
 const Navbar = () => {
   const [show, setShow] = useState(false)
@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <img className="shadow" src={logo} alt="AI Food Recipes" />
+            <img src={logo} alt="AI Food Recipes" />
           </Link>
           <button className="nav-btn" onClick={() => setShow(!show)}>
             <FiAlignJustify />

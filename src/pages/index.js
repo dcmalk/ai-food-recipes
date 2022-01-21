@@ -19,8 +19,8 @@ export default function Home() {
           ></StaticImage>
           <div className="hero-container">
             <div className="hero-text">
-              <h1>Simply Recipes</h1>
-              <h4>No fluff, just recipes</h4>
+              <h1>AI Food Recipes</h1>
+              <h4>From our robots to your plates</h4>
             </div>
           </div>
         </header>

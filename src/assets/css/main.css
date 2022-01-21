@@ -357,9 +357,13 @@ form > *:last-child {
   align-items: center;
 }
 .nav-header img {
-  width: 200px;
+  width: 250px;
   margin-left: -6px;
-  margin-bottom: -9px;
+  margin-bottom: 10px;
+}
+.shadow {
+  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.3));
 }
 .nav-btn {
   padding: 0.15rem 0.75rem;
@@ -458,7 +462,7 @@ form > *:last-child {
 }
 .page-footer span,
 .page-footer a {
-  color: var(--primary-500);
+  color: var(--primary-300);
 }
 
 /*#########*/
@@ -794,7 +798,6 @@ form > *:last-child {
 .single-tool {
   border-bottom: 1px solid var(--grey-500);
   padding-bottom: 0.75rem;
-  color: var(--primary-500);
   text-transform: capitalize;
 }
 

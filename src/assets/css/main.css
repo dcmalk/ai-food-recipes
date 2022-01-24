@@ -235,7 +235,7 @@ button[disabled] {
 /* Basic Classes */
 .alert {
   padding: 0.375rem 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   border-color: transparent;
   border-radius: var(--borderRadius);
 }
@@ -809,7 +809,7 @@ form fieldset {
   margin-bottom: 40px;
 }
 .add-form {
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 /*#########*/

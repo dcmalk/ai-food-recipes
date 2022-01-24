@@ -8,3 +8,21 @@ export const shuffleArray = array => {
   }
   return array
 }
+
+// Fetch with retries
+export const fetchRetry = async (url, options, retries = 3, wait = 1000) => {
+  try {
+    const response = await fetch(url, options)
+    if (response.ok) {
+      return response //.json()
+    }
+    throw new Error("Error: Unable to fetch the data")
+  } catch (error) {
+    if (retries <= 0) {
+      throw error
+    }
+    console.log("Retrying... ", retries)
+    await new Promise(r => setTimeout(r, wait)) // sleep
+    return fetchRetry(url, options, retries - 1, wait)
+  }
+}

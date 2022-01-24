@@ -516,7 +516,7 @@ form fieldset {
   .about-page {
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    height: 400px;
+    height: 800px;
   }
   .about-img {
     height: 100%;
@@ -809,7 +809,7 @@ form fieldset {
   margin-bottom: 40px;
 }
 .add-form {
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 /*#########*/

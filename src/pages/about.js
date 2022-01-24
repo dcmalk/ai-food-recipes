@@ -13,18 +13,31 @@ const About = ({ data }) => {
       <main className="page">
         <section className="about-page">
           <article>
-            <h2>I'm baby coloring book poke taxidermy</h2>
+            <h2>Using advanced AI to generate tasty recipes</h2>
             <p>
-              Taxidermy forage glossier letterpress heirloom before they sold
-              out you probably haven't heard of them banh mi biodiesel chia.
+              This project started as an exercise in Gatsby and evolved into an
+              exploration of AI and serverless development.
+            </p>
+            <p>Here's how it works.</p>
+            <p>
+              GraphQL queries Contentful for recipe data and then Gatsby serves
+              everything neatly as a static site.
             </p>
             <p>
-              Taiyaki tumblr flexitarian jean shorts brunch, aesthetic salvia
-              retro. Contact
+              To generate a recipe, an AI trained on cooking recipes is used.
+              It's seeded using random ingredients and after generation, a
+              Pixabay image is chosen. Everything is then saved to Contentful at
+              which point Netlify redeploys the site.
             </p>
-            <Link to="/contact" className="btn">
-              Contact
-            </Link>
+            <p>For a look under the hood, check out the Github repo!</p>
+            <div>
+              <a
+                href="https://github.com/dcmalk/ai-food-recipes"
+                className="btn"
+              >
+                Go to repo
+              </a>
+            </div>
           </article>
           <StaticImage
             src="../assets/images/about.jpg"
@@ -34,7 +47,7 @@ const About = ({ data }) => {
           />
         </section>
         <section className="featured-recipes">
-          <h5>Look at this Awesomesauce!</h5>
+          <h5>Check out these featured recipes!</h5>
           <RecipesList recipes={recipes} />
         </section>
       </main>
